@@ -1,0 +1,10 @@
+.box-shadow {
+  &_blue {
+    box-shadow: 0 0 5px 2px $blue;
+  }
+}
+.label_mini {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}

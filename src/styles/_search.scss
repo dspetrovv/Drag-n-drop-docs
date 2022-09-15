@@ -1,0 +1,25 @@
+.search {
+  position: relative;
+  &__input {
+    @include input;
+    width: 100%;
+    padding: 12px 0 10px 30px;
+    font-size: 20px;
+    font-style: italic;
+    &::placeholder {
+      font-style: italic;
+    }
+  }
+  &__clear-btn {
+    @include closeIcon;
+  }
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0px;
+    margin: auto 0;
+    transform: scale(0.75);
+  }
+}

@@ -1,0 +1,77 @@
+.open-icon {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  &::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    border: 1px solid $grayColor;
+    border-radius: 50%;
+    position: absolute;
+  }
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    top: 0;
+    left: 5px;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    transform: rotate(135deg);
+    transition: transform 0.5s ease-in-out, top 0.5s ease-in-out;
+    border-top: 2px solid $blue;
+    border-right: 2px solid $blue;
+  }
+  &_opened {
+    &::after {
+      top: 6px;
+      transform: rotate(-45deg);
+    }
+  }
+}
+.btn {
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+  border: 1px solid $grayColor;
+  border-radius: 20px;
+  padding: 7px 25px 6px;
+  font-weight: 600;
+  transition: box-shadow 0.3s ease-in-out;
+  &:hover {
+    box-shadow: 0 0 2px 1px $blue;
+  }
+  &_disabled {
+    cursor: default;
+    border-color: #d4d9e3;
+    background-color: #d4d9e3;
+    color: #707070;
+    &:hover {
+      box-shadow: none;
+    }
+  }
+  &_plus {
+    padding-left: 40px;
+  }
+  &__icon {
+    &-plus {
+      @include plusIcon;
+    }
+  }
+}
+.radio {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+input {
+  @include input;
+}
+textarea {
+  @include textArea;
+}

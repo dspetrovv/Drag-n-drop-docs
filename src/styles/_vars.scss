@@ -1,0 +1,81 @@
+$violetColor: #ff3f9b;
+$grayColor: #dfe4ef;
+$darkGrayColor: #aab5cc;
+$blue: #0066ff;
+@mixin closeIcon {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto 0;
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 20px;
+    top: 0;
+    right: -20px;
+    bottom: 0;
+    margin: auto 0;
+    background-color: $violetColor;
+  }
+  &::after {
+    transform: rotate(45deg);
+  }
+  &::before {
+    transform: rotate(-45deg);
+  }
+}
+@mixin plusIcon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto 0;
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 14px;
+    top: 0;
+    left: 17px;
+    bottom: 0;
+    margin: auto 0;
+    background-color: $blue;
+  }
+  &::before {
+    transform: rotate(-90deg);
+  }
+}
+@mixin input {
+  padding: 5px;
+  margin: 0 0 3px;
+  outline: none;
+  border: 0;
+  border-bottom: 1px solid $darkGrayColor;
+  transition: border-bottom-color 0.2s ease-in-out;
+  &:active,
+  &:focus {
+    border-bottom-color: $blue;
+  }
+  &:hover:not(:focus) {
+    border-bottom-color: $blue;
+  }
+}
+@mixin textArea {
+  border: 1px solid $darkGrayColor;
+  outline: none;
+  max-width: -webkit-fill-available;
+  max-width: -moz-available;
+  transition: border-color 0.2s ease-in-out;
+  &:active,
+  &:focus {
+    border-color: $blue;
+  }
+  &:hover:not(:focus) {
+    border-color: $blue;
+  }
+}
