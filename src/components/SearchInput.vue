@@ -11,7 +11,7 @@
         id="type"
         type="radio"
         class="radio"
-        @change="changeRadio('type')"
+        @change="changeRadio"
         :checked="type"
         :disabled="searchText.trim().length"
       >
@@ -23,7 +23,7 @@
         id="docs"
         type="radio"
         class="radio"
-        @change="changeRadio('docs')"
+        @change="changeRadio"
         :checked="docs"
         :disabled="searchText.trim().length"
       >
@@ -41,14 +41,9 @@ export default {
     let searchText = ref('');
     let type = ref(true);
     let docs = ref(false);
-    function changeRadio(radio) {
-      if (radio === 'type') {
-        type.value = true;
-        docs.value = false;
-      } else if (radio === 'docs') {
-        docs.value = true;
-        type.value = false;
-      }
+    function changeRadio() {
+      type.value = !type.value;
+      docs.value = !docs.value;
     }
     function clearInput() {
       searchText.value = '';
